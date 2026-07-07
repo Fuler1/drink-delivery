@@ -5,12 +5,12 @@ services:
     image: postgres:16
     restart: unless-stopped
     environment:
-      POSTGRES_USER: drinks
-      POSTGRES_PASSWORD: e1%@74g8@BcZd2BCgw&TSh8lgaE3Qj0i4BZ12A!E3#gd&q$x3O#N!Ex30S7*p1jg6w$YM0YZQhc*rK80
-      POSTGRES_DB: drinks
+      POSTGRES_USER: 
+      POSTGRES_PASSWORD: 
+      POSTGRES_DB: 
     volumes:
-      - db_data:/var/lib/postgresql/data
-      - ./backend/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - 
+      - 
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U drinks -d drinks"]
       interval: 5s
@@ -29,13 +29,13 @@ services:
       - ./backend/.env
     environment:
       # Nadpisujemy rzeczy ktore w kontenerze MUSZA byc inne niz lokalnie:
-      DATABASE_URL: postgres://drinks:drinks@db:5432/drinks
-      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://192.168.8.100:5173
+      DATABASE_URL: 
+      CORS_ORIGINS: 
     ports:
       - "4000:4000"
     volumes:
-      - ./backend:/app
-      - /app/node_modules
+      - 
+      - 
 
   frontend:
     build:
